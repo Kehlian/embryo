@@ -1,0 +1,4 @@
+- Au moment de se log, créer compte;
+- Bouton ou retour automatique après send post;
+- Clarté des posts;
+- Protéger contre injection HTML et JS;
