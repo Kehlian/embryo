@@ -32,6 +32,7 @@ li {
 }
 
 h1 {
+	margin-top: 100px;
 	text-align: center;
 	font-size: 72px;
 	font-family: "Oswald", sans-serif;
@@ -58,9 +59,11 @@ small {
 
 main,
 .container {
-	width: 633px;
+	width: 620px;
 	margin: 0 auto;
 }
+
+
 
 
 /* NAV */
@@ -235,7 +238,55 @@ footer p {
 	padding-top: 15px;
 }
 
+.footerForceBottom {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.footerForceBottom p {
+	padding: 0;
+}
+
 /* PAGE SPECIFICS */
 
 /* post form*/
 
+fieldset {
+	margin: 0;
+	margin-bottom: 25px;
+	padding: 0;
+	border: none;
+}
+
+input, textarea {
+	width: 380px;
+	float: right;
+	font-family: "Roboto Condensed";
+	font-size: 18px;
+	font-weight: 300;
+	border: 1px solid #CCC;
+	padding: 2px;
+}
+
+#exercice {
+	margin-top: -20px;
+}
+
+.inputButton {
+	width: 140px;
+	font-size: 20px;
+	font-weight: 300;
+	color: #4CAF4F;
+	text-decoration: none;
+	background: #fcfcfc;
+	border: 1px solid #4CAF4F;
+	padding: 10px 15px;
+	transition: all .1s;
+}
+
+.inputButton:hover {
+	background: #4caf4f;
+	color: #fcfcfc;
+	transition: all .1s;
+}

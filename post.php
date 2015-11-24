@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
     // First we execute our common code to connection to the database and start the session
 //    require("common.php");
@@ -19,13 +19,11 @@
     // We can display the user's username to them by reading it from the session array.  Remember that because
     // a username is user submitted content we must use htmlentities on it before displaying it to the user.
 ?>
-
--->
 	<!DOCTYPE html>
 	<html lang="fr">
 
 	<head>
-		<title>Dis nous tout</title>
+		<title>Send post - Embryo</title>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="_style/style.css" />
 
@@ -57,7 +55,7 @@
 				<li><a class="navElement logo" href="index.php">Embryo</a></li>
 				<li class="navElement empty"></li>
 				<li><a class="navElement navLink" href="index.php">Accueil</a></li>
-				<li><a href="private.php" class="navElement navLink onPage">Posts</a></li>
+				<li><a href="private.php" class="navElement navLink">Posts</a></li>
 				<?php              
 
                         if ($_SESSION['user']['admin'] == 1) {
@@ -93,29 +91,24 @@
 		<main>
 			<form action="sendNeeds.php" method="POST">
 				<h1>Dis nous tout...</h1>
-				<div class="inp_field">
-					<label for="class_name">Cours: </label>
+				<fieldset>
+					<label for="class_name">Cours</label>
 					<input type="text" name="class_name" id="class_name" maxlength="50" required placeholder="Intitulé du cours">
-				</div>
+				</fieldset>
 
-				<div class="inp_field">
-					<label for="exercice">Exercice ( 250 caractères max ): </label>
-					<textarea name="exercice" id="exercice" maxlength="250" required placeholder="Quel exercice te bloque ?"></textarea>
-				</div>
+				<fieldset>
+					<label for="exercice">Explication<br/><small>max.500 caractères</small> </label>
+					<textarea name="exercice" id="exercice" maxlength="500" required placeholder="Explique nous ton problème"></textarea>
+				</fieldset>
+				
+				<input type="submit" id="sendButton" class="inputButton" value="Envoyer">
 
-				<div class="inp_field">
-					<label for="description">Difficultés rencontrées ( 500 caractères max ): </label>
-					<textarea name="description" id="description" maxlength="500" required placeholder="Qu'est-ce que tu n'as pas compris ?"></textarea>
-				</div>
-
-				<div class="inp_field">
-					<input type="submit" id="sendButton" value="Envoyer">
-				</div>
-				<div class="formFooter">
-
-				</div>
 			</form>
 		</main>
+		<!-- Footer -->
+		<footer class="footerForceBottom">
+			<p>Réalisé par Clément Schmouker et Robin Devouge</p>
+		</footer>
 
 		<!-- JQuery / JS Insertion -->
 		<script src="_js/jquery-1.11.2.min.js"></script>

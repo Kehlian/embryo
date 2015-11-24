@@ -89,24 +89,26 @@
 		</header>
 		<!-- Main Content -->
 		<main class="mainContent">
-			<!--		<php include("news.php"); >-->
-			<div class="post">
-				<h3 class="postTitle">Bienvenue</h3>
-				<small class="postDate">21/10/2015</small>
-				<p class="postContent">
-					Salit salut ! Bienvenue sur Embryo. Nous allons Planifier ensembles notre première session.
-				</p>
-				<p class="postContent">
-					Premièrement, il va vous faloir vous inscrire sur le site. Vous pouvez prendre n'importe quel pseudo, mais ce sera plus facile si vous utilisez votre vrai nom. Pour ma part j'utilise mon prénom suivit de la première lettre de mon nom de famille et d'un point: "Clément S." Ensuite, postez les soucis que vous avez rencontré. N'ayez pas peur des doublons, ils nous aident justement à définir ce qui doit être vu en priorité. Les posts sont anonymes pour faciliter l'ouverture. Ni moi, ni Robin n'avons de trace de qui à posté quoi. Vous pouvez donc tout dire sans tabou, je compte sur vous pour ne pas faire n'importe quoi. La création de compte sera utile pour des fonctionnalités futures de l'application que vous nous aiderez sûrement à réaliser :)
-				</p>
-				<p class="postContent">
-					La première session aura donc lieu le vendredi 30 octobre, au soir. D'ici là, nous communiquerons avec vous via slack. N'hésitez pas à contacter Robin ou moi-même si vous avez des questions.
-				</p>
-				<p class="postContent">A bientôt !
-				</p>
-				<small class="postSignature">Clément S.</small>
+			<?php 
+//				include("news.php"); 
+			?>
+				<div class="post">
+					<h3 class="postTitle">Bienvenue</h3>
+					<small class="postDate">21/10/2015</small>
+					<p class="postContent">
+						Salit salut ! Bienvenue sur Embryo. Nous allons Planifier ensembles notre première session.
+					</p>
+					<p class="postContent">
+						Premièrement, il va vous faloir vous inscrire sur le site. Vous pouvez prendre n'importe quel pseudo, mais ce sera plus facile si vous utilisez votre vrai nom. Pour ma part j'utilise mon prénom suivit de la première lettre de mon nom de famille et d'un point: "Clément S." Ensuite, postez les soucis que vous avez rencontré. N'ayez pas peur des doublons, ils nous aident justement à définir ce qui doit être vu en priorité. Les posts sont anonymes pour faciliter l'ouverture. Ni moi, ni Robin n'avons de trace de qui à posté quoi. Vous pouvez donc tout dire sans tabou, je compte sur vous pour ne pas faire n'importe quoi. La création de compte sera utile pour des fonctionnalités futures de l'application que vous nous aiderez sûrement à réaliser :)
+					</p>
+					<p class="postContent">
+						La première session aura donc lieu le vendredi 30 octobre, au soir. D'ici là, nous communiquerons avec vous via slack. N'hésitez pas à contacter Robin ou moi-même si vous avez des questions.
+					</p>
+					<p class="postContent">A bientôt !
+					</p>
+					<small class="postSignature">Clément S.</small>
 
-			</div>
+				</div>
 		</main>
 		<!-- Footer -->
 		<footer>
