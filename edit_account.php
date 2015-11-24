@@ -1,7 +1,7 @@
 <?php
 
     // First we execute our common code to connection to the database and start the session
-    require("common.php");
+//    require("common.php");
     
     // At the top of the page we check to see whether the user is logged in or not
     if(empty($_SESSION['user']))

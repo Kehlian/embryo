@@ -1,9 +1,9 @@
 <?php
 function Connect(){
-$mysql_server="clementsjwdata.mysql.db";
-$mysql_userName="clementsjwdata";
-$mysql_password=file_get_contents("../password.txt");
-$mysql_databaseName="clementsjwdata";
+$username = "clementsjwdata";
+$password = file_get_contents("../password.txt");
+$host = "clementsjwdata.mysql.db";
+$dbname = "clementsjwdata";
 
   /* Connecting, selecting database */
 //$link = new mysqli($mysql_server, $mysql_userName, $mysql_password,$mysql_databaseName);
