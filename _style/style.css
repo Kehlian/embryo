@@ -79,6 +79,7 @@ main,
 	clear: both;
 }
 
+
 /* NAV */
 
 nav {
@@ -263,9 +264,8 @@ footer p {
 	padding: 0;
 }
 
-/* PAGE SPECIFICS */
 
-/* post form*/
+/* FORMS */
 
 fieldset {
 	margin: 0;
@@ -274,7 +274,8 @@ fieldset {
 	border: none;
 }
 
-input, textarea {
+input,
+textarea {
 	width: 380px;
 	float: right;
 	font-family: "Roboto Condensed";
