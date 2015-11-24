@@ -1,7 +1,7 @@
 <?php
 
     // First we execute our common code to connection to the database and start the session
-    require("common.php");
+//    require("common.php");
     
     // This if statement checks to determine whether the registration form has been submitted
     // If it has, then the registration code is run, otherwise the form is displayed
@@ -143,46 +143,86 @@
     
 ?>
 
-<head>
-    <title>Embryo | Login</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="_style/style.css" />
-    
+	<head>
+		<title>Nouveau compte - Embryo</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="_style/style.css" />
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        
-        <link rel="shortcut icon" href="_img/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="_img/favicon.ico" type="image/x-icon">
-        
-        
-            <!-- Font Insertion -->
-        <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
-</head>
-<body>
-    <div class="loginContainer">
-        <h1 class="loginTitle">Register</h1>
-        <form action="register.php" method="post">
-            
-            <div class="loginField">
-                <label for="username">Nom d'utilisateur:</label>
-                <input id="username" type="text" name="username" value="" placeholder=" ex: Charles D." />
-                <p class="loginnote">Utilisez quelque chose de facilement identifiable, comme "Charles D."</p>
-            </div>
-            
-            <div class="loginField">
-                <label for="email">E-Mail:</label>
-                <input id="email" type="text" name="email" value="" placeholder=" ex: charles.dupuits@gmail.com" />
-            </div>
-            
-            <div class="loginField">
-                <label for="password">Mot de passe:</label>
-                <input id="password" type="password" name="password" value="" />
-            </div>
-            
-            <input class="loginSubmit" type="submit" value="S'enregistrer" />
-        </form>
-    <a href="index.php">Retour à l'accueil</a>
-    </div>
-</body>
+
+		<link rel="shortcut icon" href="_img/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="_img/favicon.ico" type="image/x-icon">
+
+
+		<!-- Font Insertion -->
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+		<nav>
+			<ul class="mainNav">
+				<li><a class="navElement logo" href="index.php">Embryo</a></li>
+				<li class="navElement empty"></li>
+				<li><a class="navElement navLink" href="index.php">Accueil</a></li>
+				<li><a href="private.php" class="navElement navLink">Posts</a></li>
+				<?php              
+
+                        if ($_SESSION['user']['admin'] == 1) {
+                            echo"<li><a href='admin.php' class='navElement navLink'>Admin</a></li>";
+                        }        
+                        if(empty($_SESSION['user']))
+                        {
+                                echo" ";
+                            
+                            }
+                        else
+                        {
+                            echo"<li><a href='logout.php' class='navElement navLink'>Logout</a></li>";
+                        } 
+                    ?>
+					<li>
+						<a href="edit_account.php" class="navElement navLink onPage">
+							<?php 
+					if(empty($_SESSION['user']))
+					{
+							echo"Login";
+						}
+					else
+					{
+						echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); //protect script injection via name
+					} 
+				?>
+						</a>
+					</li>
+			</ul>
+		</nav>
+		<main>
+			<h1 class="loginTitle">Sign In</h1>
+			<form action="register.php" method="post">
+
+				<fieldset>
+					<label for="username">Nom d'utilisateur:</label>
+					<input id="username" type="text" name="username" value="" placeholder=" ex: Charles D." />
+					<p class="loginnote">Utilisez quelque chose de facilement identifiable, comme "Charles D."</p>
+				</fieldset>
+
+				<fieldset>
+					<label for="email">E-Mail:</label>
+					<input id="email" type="text" name="email" value="" placeholder=" ex: charles.dupuits@gmail.com" />
+				</fieldset>
+
+				<fieldset>
+					<label for="password">Mot de passe:</label>
+					<input id="password" type="password" name="password" value="" />
+				</fieldset>
+
+				<input class="inputButton" type="submit" value="Sign In" />
+				<div class="cf"></div>
+			</form>
+			<a href="index.php" class="loginLink loginLink--accueil">Retour à l'accueil</a>
+			<a href="login.php" class="loginLink">Déjà un compte ?</a>
+		</main>
+	</body>

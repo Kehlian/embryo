@@ -102,8 +102,9 @@
 				</fieldset>
 				
 				<input type="submit" id="sendButton" class="inputButton" value="Envoyer">
-
+				<div class="cf"></div>
 			</form>
+			<a href="index.php" class="loginLink loginLink--accueil">Retour à l'accueil</a>
 		</main>
 		<!-- Footer -->
 		<footer class="footerForceBottom">
