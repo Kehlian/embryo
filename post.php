@@ -97,7 +97,7 @@
 
 				<fieldset>
 					<label for="exercice">Explication
-						<br/><small>max.500 caractères</small> </label>
+						<br/><small>max. 500 caractères</small> </label>
 					<textarea name="exercice" class="explication" id="exercice" maxlength="500" required placeholder="Explique nous ton problème"></textarea>
 				</fieldset>
 
