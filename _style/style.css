@@ -203,12 +203,25 @@ nav {
 	transition: all .1s;
 }
 
+.button--onWhite {
+	display: block;
+	margin: 0 auto;
+	width: 160px;
+	text-align: center;
+	border-color: #4caf4f;
+	color: #4caf4f;
+}
+
 .button:hover {
 	background: #fcfcfc;
 	color: #83c283;
 	transition: all .1s;
 }
 
+.button--onWhite:hover {
+	background: #4caf4f;
+	color: #fcfcfc;
+}
 
 /* POSTS */
 
