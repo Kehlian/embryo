@@ -7,7 +7,7 @@
 	<html>
 
 	<head>
-		<title>Embryo</title>
+		<title>EMBRYO</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="_style/style.css" />
 
@@ -38,24 +38,9 @@
 				<li class="navElement empty"></li>
 				<li><a class="navElement navLink onPage" href="index.php">Accueil</a></li>
 				<li><a href="private.php" class="navElement navLink">Posts</a></li>
-				<?php              
-
-                        if ($_SESSION['user']['admin'] == 1) {
-                            echo"<li><a href='admin.php' class='navElement navLink'>Admin</a></li>";
-                        }        
-                        if(empty($_SESSION['user']))
-                        {
-                                echo" ";
-                            
-                            }
-                        else
-                        {
-                            echo"<li><a href='logout.php' class='navElement navLink'>Logout</a></li>";
-                        } 
-                    ?>
-					<li>
-						<a href="edit_account.php" class="navElement navLink">
-							<?php 
+				<li>
+					<a href="edit_account.php" class="navElement navLink">
+						<?php 
 					if(empty($_SESSION['user']))
 					{
 							echo"Login";
@@ -65,8 +50,22 @@
 						echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); //protect script injection via name
 					} 
 				?>
-						</a>
-					</li>
+					</a>
+				</li>
+				<?php                 
+                        if(empty($_SESSION['user']))
+                        {
+                                echo" ";
+                            
+                            }   
+                        else
+                        {
+							if ($_SESSION['user']['admin'] == 1) {
+                            echo"<li><a href='admin.php' class='navElement navLink'>Admin</a></li>";
+                        	}  
+                        	echo"<li><a href='logout.php' class='navElement navLink'>Logout</a></li>";
+                        }
+                    ?>
 			</ul>
 		</nav>
 		<!-- Header -->

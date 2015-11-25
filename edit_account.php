@@ -7,11 +7,11 @@
     if(empty($_SESSION['user']))
     {
         // If they are not, we redirect them to the login page.
-        header("Location: login.php");
+//        header("Location: login.php");
         
         // Remember that this die statement is absolutely critical.  Without it,
         // people can view your members-only content without logging in.
-        die("Redirecting to login.php");
+//        die("Redirecting to login.php");
     }
     
     // This if statement checks to determine whether the edit form has been submitted
@@ -149,78 +149,83 @@
     }
     
 ?>
-<head>
-	<link rel="stylesheet" href="_style/style.css" />
-        
+
+	<head>
+		<title>Mon compte | EMBRYO</title>
+	
+		<link rel="stylesheet" href="_style/style.css" />
+
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        
-        <link rel="shortcut icon" href="_img/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="_img/favicon.ico" type="image/x-icon">
-		
-        <!-- Font Insertion -->
-        <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
-</head>
-<body>
-                <!-- Navigation -->
-        <nav>
-            <ul>
-                <li><a class="logo" href="index.php"><img src="_img/logo.svg" alt="logo" /><p>Embryo</p></a></li>
-                    <?php 
-                        if ($_SESSION['user']['admin'] == 1) {
-                            echo"<li><a href='admin.php'>Admin</a></li>";
-                        }
+
+		<link rel="shortcut icon" href="_img/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="_img/favicon.ico" type="image/x-icon">
+
+		<!-- Font Insertion -->
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+		<!-- Navigation -->
+		<nav>
+			<ul class="mainNav">
+				<li><a class="navElement logo" href="index.php">Embryo</a></li>
+				<li class="navElement empty"></li>
+				<li><a class="navElement navLink" href="index.php">Accueil</a></li>
+				<li><a href="private.php" class="navElement navLink">Posts</a></li>
+				<li>
+					<a href="edit_account.php" class="navElement navLink onPage">
+						<?php 
+					if(empty($_SESSION['user']))
+					{
+							echo"Login";
+						}
+					else
+					{
+						echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); //protect script injection via name
+					} 
+				?>
+					</a>
+				</li>
+				<?php                 
                         if(empty($_SESSION['user']))
                         {
                                 echo" ";
                             
-                            }
+                            }   
                         else
                         {
-                            echo"<li><a href='logout.php'>Logout</a></li>";
-                        } 
+							if ($_SESSION['user']['admin'] == 1) {
+                            echo"<li><a href='admin.php' class='navElement navLink'>Admin</a></li>";
+                        }  
+                            echo"<li><a href='logout.php' class='navElement navLink'>Logout</a></li>";
+                        }
                     ?>
-                <li><a  class="onPage" href="edit_account.php">
-                    <?php 
-                        if(empty($_SESSION['user']))
-                        {
-                                echo"Log in";
-                            }
-                        else
-                        {
-                            echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
-                        } 
-                    ?>
-                    </a>
-                </li>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="private.php">Posts</a></li>
-            </ul>
-        </nav>
-<div class="loginContainer"</div>
-<h1 class="editTitle loginTitle">Editer mon compte</h1>
-<form action="edit_account.php" method="post">
-    
-    <div class="loginField aleft">
-        <p>Nom d'utilisateur:</p>
-        <b><?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></b>
-    </div>
-    
-    <div class="loginField">
-        <label for="email">Adresse Mail:</label>
-        <input id="email" type="text" name="email" value="<?php echo htmlentities($_SESSION['user']['email'], ENT_QUOTES, 'UTF-8'); ?>" />
-    </div>
-    
-    <div class="loginField">
-        <label for="password">Mot de passe:</label>
-        <input id="password" type="password" name="password" value="" /><br />
-        <i>(laisser vide pour ne pas le modifier)</i>
-    </div>
-    <input class="loginSubmit" type="submit" value="Mettre à jour" />
-</form>
-</div>
-</body>
+			</ul>
+		</nav>
+		<main>
+			<h1 class="editTitle loginTitle">Editer mon compte</h1>
+			<form action="edit_account.php" method="post">
+
+				<fieldset>
+					<p>Nom d'utilisateur:</p>
+					<b><?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></b>
+				</fieldset>
+
+				<fieldset>
+					<label for="email">Adresse Mail:</label>
+					<input id="email" type="text" name="email" value="<?php echo htmlentities($_SESSION['user']['email'], ENT_QUOTES, 'UTF-8'); ?>" />
+				</fieldset>
+
+				<fieldset>
+					<label for="password">Mot de passe:</label>
+					<input id="password" type="password" name="password" value="" placeholder="Laisser vide pour ne pas le modifier"/>
+				</fieldset>
+				<input class="inputButton" type="submit" value="Mettre à jour" />
+			</form>
+		</main>
+	</body>

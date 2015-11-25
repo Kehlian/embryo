@@ -17,7 +17,7 @@
 ?>
 <html>
 <head>
-        <title>Embryo</title>
+        <title>Posts | EMBRYO</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="_style/normalize.css" />
         <link rel="stylesheet" href="_style/style.css" />
@@ -55,24 +55,9 @@
 				<li class="navElement empty"></li>
 				<li><a class="navElement navLink" href="index.php">Accueil</a></li>
 				<li><a href="private.php" class="navElement navLink onPage">Posts</a></li>
-				<?php              
-
-                        if ($_SESSION['user']['admin'] == 1) {
-                            echo"<li><a href='admin.php' class='navElement navLink'>Admin</a></li>";
-                        }        
-                        if(empty($_SESSION['user']))
-                        {
-                                echo" ";
-                            
-                            }
-                        else
-                        {
-                            echo"<li><a href='logout.php' class='navElement navLink'>Logout</a></li>";
-                        } 
-                    ?>
-					<li>
-						<a href="edit_account.php" class="navElement navLink">
-							<?php 
+				<li>
+					<a href="edit_account.php" class="navElement navLink">
+						<?php 
 					if(empty($_SESSION['user']))
 					{
 							echo"Login";
@@ -82,8 +67,22 @@
 						echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); //protect script injection via name
 					} 
 				?>
-						</a>
-					</li>
+					</a>
+				</li>
+				<?php                 
+                        if(empty($_SESSION['user']))
+                        {
+                                echo" ";
+                            
+                            }   
+                        else
+                        {
+							if ($_SESSION['user']['admin'] == 1) {
+                            echo"<li><a href='admin.php' class='navElement navLink'>Admin</a></li>";
+                        }  
+                            echo"<li><a href='logout.php' class='navElement navLink'>Logout</a></li>";
+                        }
+                    ?>
 			</ul>
 		</nav>
 		<!-- Main Content -->
@@ -97,8 +96,7 @@
 		</main>
         <!-- JQuery / JS Insertion -->
 <!--
-        <script src="_js/jquery-1.11.2.min.js"></script>
-        <script src="_js/main.js"></script>
--->
+<script src="_js/jquery-1.11.2.min.js"></script>
+<script src="_js/main.js"></script>-->
     </body>
 </html>
