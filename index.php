@@ -112,8 +112,10 @@
 		</footer>
 
 		<!-- Script Insertion -->
+<!--
 		<script src="_js/jquery-1.11.2.min.js"></script>
 		<script src="_js/main.js"></script>
+-->
 
 	</body>
 

@@ -215,7 +215,7 @@
 				<input class="button button--input" type="submit" value="Sign In" />
 				<div class="cf"></div>
 			</form>
-			<a href="index.php" class="link--underForm link--underForm--accueil">Retour à l'accueil</a>
+			<a href="index.php" class="link--underForm link--underForm--left">Retour à l'accueil</a>
 			<a href="login.php" class="link--underForm">Déjà un compte ?</a>
 		</main>
 	</body>

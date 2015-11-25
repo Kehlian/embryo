@@ -60,7 +60,7 @@ h2 {
 	text-align: center;
 }
 
-h3 {
+h3, th {
 	color: #4caf4f;
 	font-family: "Oswald", sans-serif;
 	font-size: 36px;
@@ -70,6 +70,13 @@ h3 {
 small {
 	font-size: 13px;
 	font-weight: 400;
+}
+
+td {
+	color: #444;
+	font-family: "Roboto Condensed", sans-serif;
+	font-size: 18px;
+	font-weight: 300;
 }
 
 .cf {
@@ -96,7 +103,7 @@ a:hover {
 	float: right;
 }
 
-.link--underForm--accueil {
+.link--underForm--left {
 	float: left;
 }
 

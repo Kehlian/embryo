@@ -104,7 +104,7 @@
 				<input type="submit" id="sendButton" class="button button--input" value="Envoyer">
 				<div class="cf"></div>
 			</form>
-			<a href="index.php" class="link--underForm link--underForm--accueil">Retour à l'accueil</a>
+			<a href="index.php" class="link--underForm link--underForm--left">Retour à l'accueil</a>
 		</main>
 		<!-- Footer -->
 		<footer class="footerForceBottom">
@@ -112,8 +112,10 @@
 		</footer>
 
 		<!-- JQuery / JS Insertion -->
+<!--
 		<script src="_js/jquery-1.11.2.min.js"></script>
 		<script src="_js/main.js"></script>
+-->
 	</body>
 
 	</html>

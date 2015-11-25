@@ -108,7 +108,6 @@
 	</head>
 
 	<body>
-		<nav>
 			<nav>
 				<ul>
 					<li><a class="nav__element nav__element--logo" href="index.php">Embryo</a></li>
@@ -162,7 +161,7 @@
 					<input class="button button--input" type="submit" value="Login" />
 					<div class="cf"></div>
 				</form>
-				<a href="index.php" class="link--underForm link--underForm--accueil">Retour à l'accueil</a>
+				<a href="index.php" class="link--underForm link--underForm--left">Retour à l'accueil</a>
 				<a href="register.php" class="link--underForm">Pas de compte ?</a>
 			</main>
 	</body>
