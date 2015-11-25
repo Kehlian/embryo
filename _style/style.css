@@ -89,6 +89,7 @@ nav {
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 100;
 }
 
 .mainNav {
@@ -132,7 +133,7 @@ nav {
 }
 
 .logo {
-	background-image: url(../_img/logo.png);
+	background-image: url(../_img/logo-white.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	text-indent: 55px;
@@ -185,6 +186,10 @@ nav {
 	color: #fcfcfc;
 	opacity: .5;
 	cursor: default;
+}
+
+.presenceValidation:hover {
+	color: #fcfcfc;
 }
 
 .headerButtons {
