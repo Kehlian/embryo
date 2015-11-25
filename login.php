@@ -105,23 +105,19 @@
 		<link rel="shortcut icon" href="_img/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="_img/favicon.ico" type="image/x-icon">
 
-		<!-- Font Insertion -->
-		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
 		<nav>
-			<ul class="mainNav">
-				<li><a class="navElement logo" href="index.php">Embryo</a></li>
-				<li class="navElement empty"></li>
-				<li><a class="navElement navLink" href="index.php">Accueil</a></li>
-				<li><a href="private.php" class="navElement navLink">Posts</a></li>
-				<li>
-					<a href="edit_account.php" class="navElement navLink onPage">
-						<?php 
+			<nav>
+				<ul>
+					<li><a class="nav__element nav__element--logo" href="index.php">Embryo</a></li>
+					<li class="nav__element nav__element--empty"></li>
+					<li><a class="nav__element nav__element--link " href="index.php">Accueil</a></li>
+					<li><a href="private.php" class="nav__element nav__element--link">Posts</a></li>
+					<li>
+						<a href="edit_account.php" class="nav__element nav__element--link onPage">
+							<?php 
 					if(empty($_SESSION['user']))
 					{
 							echo"Login";
@@ -131,9 +127,9 @@
 						echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); //protect script injection via name
 					} 
 				?>
-					</a>
-				</li>
-				<?php                 
+						</a>
+					</li>
+					<?php                 
                         if(empty($_SESSION['user']))
                         {
                                 echo" ";
@@ -142,31 +138,31 @@
                         else
                         {
 							if ($_SESSION['user']['admin'] == 1) {
-                            echo"<li><a href='admin.php' class='navElement navLink'>Admin</a></li>";
-                        }  
-                            echo"<li><a href='logout.php' class='navElement navLink'>Logout</a></li>";
+                            echo"<li><a href='admin.php' class='nav__element nav__element--link'>Admin</a></li>";
+                        	}  
+                        	echo"<li><a href='logout.php' class='nav__element nav__element--link'>Logout</a></li>";
                         }
                     ?>
-			</ul>
-		</nav>
-		<main>
-			<h1 class="loginTitle">Login</h1>
-			<form action="login.php" method="post">
+				</ul>
+			</nav>
+			<main>
+				<h1 class="loginTitle">Login</h1>
+				<form action="login.php" method="post">
 
-				<fieldset>
-					<label for="username"> Nom d'utilisateur:</label>
-					<input type="text" id="username" name="username" value="<?php echo $submitted_username; ?>" />
-				</fieldset>
+					<fieldset>
+						<label for="username"> Nom d'utilisateur:</label>
+						<input type="text" id="username" name="username" value="<?php echo $submitted_username; ?>" />
+					</fieldset>
 
-				<fieldset>
-					<label for="password">Mot de passe:</label>
-					<input type="password" id="password" name="password" value="" />
-				</fieldset>
+					<fieldset>
+						<label for="password">Mot de passe:</label>
+						<input type="password" id="password" name="password" value="" />
+					</fieldset>
 
-				<input class="inputButton" type="submit" value="Login" />
-				<div class="cf"></div>
-			</form>
-			<a href="index.php" class="loginLink loginLink--accueil">Retour à l'accueil</a>
-			<a href="register.php" class="loginLink">Pas de compte ?</a>
-		</main>
+					<input class="button button--input" type="submit" value="Login" />
+					<div class="cf"></div>
+				</form>
+				<a href="index.php" class="link--underForm link--underForm--accueil">Retour à l'accueil</a>
+				<a href="register.php" class="link--underForm">Pas de compte ?</a>
+			</main>
 	</body>

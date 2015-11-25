@@ -51,13 +51,13 @@
 	<body>
 		<!-- Navigation -->
 		<nav>
-			<ul class="mainNav">
-				<li><a class="navElement logo" href="index.php">Embryo</a></li>
-				<li class="navElement empty"></li>
-				<li><a class="navElement navLink" href="index.php">Accueil</a></li>
-				<li><a href="private.php" class="navElement navLink">Posts</a></li>
+			<ul>
+				<li><a class="nav__element nav__element--logo" href="index.php">Embryo</a></li>
+				<li class="nav__element nav__element--empty"></li>
+				<li><a class="nav__element nav__element--link" href="index.php">Accueil</a></li>
+				<li><a href="private.php" class="nav__element nav__element--link">Posts</a></li>
 				<li>
-					<a href="edit_account.php" class="navElement navLink">
+					<a href="edit_account.php" class="nav__element nav__element--link">
 						<?php 
 					if(empty($_SESSION['user']))
 					{
@@ -79,9 +79,9 @@
                         else
                         {
 							if ($_SESSION['user']['admin'] == 1) {
-                            echo"<li><a href='admin.php' class='navElement navLink'>Admin</a></li>";
-                        }  
-                            echo"<li><a href='logout.php' class='navElement navLink'>Logout</a></li>";
+                            echo"<li><a href='admin.php' class='nav__element nav__element--link'>Admin</a></li>";
+                        	}  
+                        	echo"<li><a href='logout.php' class='nav__element nav__element--link'>Logout</a></li>";
                         }
                     ?>
 			</ul>
@@ -96,14 +96,15 @@
 				</fieldset>
 
 				<fieldset>
-					<label for="exercice">Explication<br/><small>max.500 caractères</small> </label>
-					<textarea name="exercice" id="exercice" maxlength="500" required placeholder="Explique nous ton problème"></textarea>
+					<label for="exercice">Explication
+						<br/><small>max.500 caractères</small> </label>
+					<textarea name="exercice" class="explication" id="exercice" maxlength="500" required placeholder="Explique nous ton problème"></textarea>
 				</fieldset>
-				
-				<input type="submit" id="sendButton" class="inputButton" value="Envoyer">
+
+				<input type="submit" id="sendButton" class="button button--input" value="Envoyer">
 				<div class="cf"></div>
 			</form>
-			<a href="index.php" class="loginLink loginLink--accueil">Retour à l'accueil</a>
+			<a href="index.php" class="link--underForm link--underForm--accueil">Retour à l'accueil</a>
 		</main>
 		<!-- Footer -->
 		<footer class="footerForceBottom">

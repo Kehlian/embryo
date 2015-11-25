@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 	header ('Content-type: text/html; charset=utf-8');
 
@@ -20,14 +20,11 @@
            // output data of each row
        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
        echo "
-	   <div class='postText'>
-		   <p class='date'>Posté le: ".htmlspecialchars($row["date"])."</p>
-           <p class='className'>".htmlspecialchars($row["class_name"])."</p>
-           <p class='exercice'>".htmlspecialchars($row["exercice"])."</p>
-           <p class='description'>".htmlspecialchars($row["description"])."</p>
-	       <div class='newsFooter'>
-
-           </div> 
+	   <div class='post'>
+           <h3 class='post__title'>".htmlspecialchars($row["class_name"])."</h3>
+		   <small class='post__date'>".htmlspecialchars($row["date"])."</small>
+           <p class='post__content'>".htmlspecialchars($row["exercice"])."</p>
+	       <div class='post__signature'></div> 
       </div>
 ";
        };
