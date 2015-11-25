@@ -91,7 +91,7 @@
 			?>
 				<a href="post.php" class="button button--centered">Poster un message</a>
 		</main>
-		<footer class="footerForceBottom">
+		<footer>
 			<p>Réalisé par Clément Schmouker et Robin Devouge</p>
 		</footer>
 		<!-- JQuery / JS Insertion -->

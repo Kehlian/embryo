@@ -21,10 +21,10 @@
 		   while($row = $result->fetch(PDO::FETCH_ASSOC)) {
 		   echo "
 		   <div class='post'>
-			   <h3 class='postTitle'>".$row["title"]."</h3>
-			   <small class='postDate'>Posté le: ".$row["date"]."</small>
-			   <p class='postContent'>".$row["content"]."</p>
-			   <small class='postSignature'>".$row["signature"]."</small>
+			   <h3 class='post__title'>".$row["title"]."</h3>
+			   <small class='post__date'>Posté le: ".$row["date"]."</small>
+			   <p class='post__content'>".$row["content"]."</p>
+			   <small class='post__signature'>".$row["signature"]."</small>
 		  </div>
 	";
 		   };
