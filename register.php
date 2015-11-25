@@ -1,7 +1,7 @@
 <?php
 
     // First we execute our common code to connection to the database and start the session
-//    require("common.php");
+    require("common.php");
     
     // This if statement checks to determine whether the registration form has been submitted
     // If it has, then the registration code is run, otherwise the form is displayed

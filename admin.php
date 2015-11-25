@@ -16,46 +16,46 @@
 	<?php
 
 
-//    require("common.php");
-//
-//
-//    if(empty($_SESSION['user']))
-//    {
-//
-//        header("Location: login.php");
-//
-//        die("Redirecting to login.php");
-//    }
-//    if($_SESSION['user']['admin'] == 0) {
-//        echo " <p class='triche'>Vil petit tricheur, tu n'as pas accès à cette section !</p> ";
-//        echo "<style>nav, header, .mainContent__Post {display:none;}
-//                     .triche {text-align:center;padding-top:200px;}
-//                     a {text-align:center; margin:0 auto;display:block}
-//              </style>";
-//    }
-//
-//    $query = "
-//        SELECT
-//            id,
-//            username,
-//            email
-//        FROM users
-//    ";
-//    
-//    try
-//    {
-//
-//        $stmt = $db->prepare($query);
-//        $stmt->execute();
-//    }
-//    catch(PDOException $ex)
-//    {
-//
-//        die("Failed to run query: " . $ex->getMessage());
-//    }
-//        
-//
-//    $rows = $stmt->fetchAll();
+    require("common.php");
+
+
+    if(empty($_SESSION['user']))
+    {
+
+        header("Location: login.php");
+
+        die("Redirecting to login.php");
+    }
+    if($_SESSION['user']['admin'] == 0) {
+        echo " <p class='triche'>Vil petit tricheur, tu n'as pas accès à cette section !</p> ";
+        echo "<style>nav, header, .mainContent__Post {display:none;}
+                     .triche {text-align:center;padding-top:200px;}
+                     a {text-align:center; margin:0 auto;display:block}
+              </style>";
+    }
+
+    $query = "
+        SELECT
+            id,
+            username,
+            email
+        FROM users
+    ";
+    
+    try
+    {
+
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+    }
+    catch(PDOException $ex)
+    {
+
+        die("Failed to run query: " . $ex->getMessage());
+    }
+        
+
+    $rows = $stmt->fetchAll();
 ?>
 
 		<!-- Navigation -->

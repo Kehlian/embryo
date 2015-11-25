@@ -2,7 +2,7 @@
 
 <?php
     // First we execute our common code to connection to the database and start the session
-//    require("common.php");
+    require("common.php");
 ?>
 	<html>
 
@@ -89,7 +89,7 @@
 		<!-- Main Content -->
 		<main class="mainContent">
 			<?php 
-//				include("news.php"); 
+				include("news.php"); 
 			?>
 				<div class="post">
 					<h3 class="post__title">Bienvenue</h3>
