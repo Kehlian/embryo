@@ -7,7 +7,7 @@
 	<html>
 
 	<head>
-		<title>EMBRYO</title>
+		<title>Accueil | EMBRYO</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="_style/style.css" />
 
@@ -77,10 +77,10 @@
 					<li>Prochain atelier :</li>
 					<li>Mardi 17/10</li>
 					<li>8h40 - 9h40</li>
-					<li><a href="#" class="presenceValidation">Je viens</a></li>
+					<li><a href="#" class="presenceValidation" title="DISABLED">Je viens</a></li>
 				</ul>
 				<ul class="header__buttons">
-					<li><a href="https://www.dropbox.com/sh/lvzqi7jit7i40iy/AACpwZ2Pz1VJxyP1y9vfxSYra?dl=0" class="button button--light">Dossier Dropbox</a></li>
+					<li><a href="https://www.dropbox.com/sh/lvzqi7jit7i40iy/AACpwZ2Pz1VJxyP1y9vfxSYra?dl=0" target="_blank" class="button button--light">Dossier Dropbox &shy; &shy; &#x279d;</a></li>
 					<li><a href="post.php" class="button button--light">Poster un message</a></li>
 				</ul>
 
